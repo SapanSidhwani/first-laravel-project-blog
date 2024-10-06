@@ -35,6 +35,24 @@ class UserController extends Controller
 
         // echo $req;
 
+        // print_r($req["skills"]);
+        
+        $req->validate(
+            [
+                "useremail" => "required | email",
+                "username" => "required |  min:3 | max:5",
+                "skills" => "required",
+                "age" => "required",
+                // "active" => "required",
+                "gender" => "required"
+            ],
+            // Custom Messages
+            [
+                "useremail.email" => "Email format: 2iQp4@example.com",
+                "useremail.required" => "Email is required",
+            ]
+        );
+
         /*
         {
             "_token": "caSQMvQ7S1DOWoEln8pCFXT8INUXLt3MWFtDAUw6",
