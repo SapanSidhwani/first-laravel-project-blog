@@ -53,3 +53,6 @@ Did you understand?
 */
 
 Route::get('/nested-file', [UserController::class, 'useNestedFolder']);
+
+Route::view('/user-form', 'user-form');
+Route::post('/add-user', [UserController::class, "addUser"]);
