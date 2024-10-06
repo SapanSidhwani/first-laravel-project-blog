@@ -1,0 +1,1 @@
+<h1>Hello, {{$name}}. You're the user of this page</h1>
