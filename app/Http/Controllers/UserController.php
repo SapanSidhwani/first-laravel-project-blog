@@ -37,10 +37,11 @@ class UserController extends Controller
 
         // print_r($req["skills"]);
         
+        // theses are some pre-made validation rules: required, min:3, max:5, email 
         $req->validate(
             [
                 "useremail" => "required | email",
-                "username" => "required |  min:3 | max:5",
+                "username" => "required |  min:3 | max:5 | Uppercase",
                 "skills" => "required",
                 "age" => "required",
                 // "active" => "required",
