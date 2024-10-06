@@ -22,6 +22,8 @@ Route::get('/sound/{name}', function ($name) {
 // For view
 // Route::view('/', 'home');
 
+Route::view('/static-data-to-page', 'username', ['name' => 'Sapan Sidhwani']); // http://127.0.0.1:8000/static-data-to-page
+
 Route::get('/about', function () {
     return view('about');
 });
