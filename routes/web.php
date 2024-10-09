@@ -56,3 +56,5 @@ Route::get('/nested-file', [UserController::class, 'useNestedFolder']);
 
 Route::view('/user-form', 'user-form');
 Route::post('/add-user', [UserController::class, "addUser"]);
+
+Route::view('/url1', 'url1'); //  http://localhost:8000/url1?name=sapan
