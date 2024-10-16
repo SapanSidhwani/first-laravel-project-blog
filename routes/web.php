@@ -1,6 +1,8 @@
 <?php
 
 // ----------------------------- For Routing --------------------------
+
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/home', function () {
@@ -58,3 +60,21 @@ Route::view('/user-form', 'user-form');
 Route::post('/add-user', [UserController::class, "addUser"]);
 
 Route::view('/url1', 'url1'); //  http://localhost:8000/url1?name=sapan
+
+
+/*
+
+Route::view('/student/home', 'home');
+Route::get('/student/list', [HomeController::class, 'show']);
+Route::get('/student/add', [HomeController::class, 'add']);
+
+Alternative
+
+*/
+
+// 'student' is better than '/student' in url because '/student' can occur anywhere but in 'student' it should be at the start
+Route::prefix("student")->group(function () {
+    Route::view('/home', 'home');
+    Route::get('/list', [HomeController::class, 'show']);
+    Route::get('/add', [HomeController::class, 'add']);
+});
