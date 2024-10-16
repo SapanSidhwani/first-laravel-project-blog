@@ -4,6 +4,7 @@
 
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StudentController;
 
 Route::get('/home', function () {
     return view('home');
@@ -75,6 +76,10 @@ Alternative
 // 'student' is better than '/student' in url because '/student' can occur anywhere but in 'student' it should be at the start
 Route::prefix("student")->group(function () {
     Route::view('/home', 'home');
-    Route::get('/list', [HomeController::class, 'show']);
-    Route::get('/add', [HomeController::class, 'add']);
+
+    Route::controller(HomeController::class)->group(function () {
+        Route::get('/list', 'show');
+        Route::get('/add', 'add');
+        Route::get('/delete/{id}', 'delete');
+    });
 });

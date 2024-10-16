@@ -15,4 +15,8 @@ class HomeController extends Controller
     function add() {
         return "Add Student";
     }
+
+    function delete($id) {
+        return "Delete Student: " . $id;
+    }
 }
