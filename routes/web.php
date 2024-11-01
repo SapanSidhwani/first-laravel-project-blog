@@ -87,3 +87,18 @@ Route::prefix("student")->group(function () {
 Route::get("/checkmiddleware", function () {
     return view('checkmiddleware');
 });
+
+
+// To apply group of middleware at 
+
+// 1. Single route
+Route::get("/ageAndCountryCheck", function () {
+    return view('ageAndCountryCheck');
+})->middleware("ageAndCountryCheck");
+
+// 2. Multiple routes
+// Route::middleware('ageAndCountryCheck')->group(function () {
+//     Route::get('/list', 'show');
+//     Route::get('/add', 'add');
+//     Route::get('/delete/{id}', 'delete');
+// });
