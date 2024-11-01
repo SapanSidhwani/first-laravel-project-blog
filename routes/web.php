@@ -83,3 +83,7 @@ Route::prefix("student")->group(function () {
         Route::get('/delete/{id}', 'delete');
     });
 });
+
+Route::get("/checkmiddleware", function () {
+    return view('checkmiddleware');
+});
