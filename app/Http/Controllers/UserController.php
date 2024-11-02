@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\View;
 
 class UserController extends Controller
@@ -11,6 +12,12 @@ class UserController extends Controller
     function getUser()
     {
         return "My name is Sapan";
+    }
+
+    function users() 
+    {
+        $users = DB::select("select * from users");
+        return view('users', ['users' => $users]);
     }
 
     function sayUserName($name)
@@ -36,7 +43,7 @@ class UserController extends Controller
         // echo $req;
 
         // print_r($req["skills"]);
-        
+
         // theses are some pre-made validation rules: required, min:3, max:5, email 
         $req->validate(
             [

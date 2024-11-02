@@ -49,6 +49,8 @@ Route::get('/user', [UserController::class, 'getUser']); // Now go to the `/user
 //Dynamic
 Route::get('/username/{name}', [UserController::class, 'sayUserName']);
 
+Route::get('/users', [UserController::class, 'users']);
+
 /*
 
 Did you understand?
