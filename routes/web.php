@@ -41,6 +41,7 @@ Route::get('/about', function () {
 // ----------------------------- For Controllers -------------------------
 
 use App\Http\Controllers\UserController;
+use App\Http\Middleware\AgeCheck;
 
 // Static
 Route::get('/user', [UserController::class, 'getUser']); // Now go to the `/user`. There is no need to make the view file.
@@ -92,9 +93,9 @@ Route::get("/checkmiddleware", function () {
 // To apply group of middleware at 
 
 // 1. Single route
-Route::get("/ageAndCountryCheck", function () {
-    return view('ageAndCountryCheck');
-})->middleware("ageAndCountryCheck");
+// Route::get("/ageAndCountryCheck", function () {
+//     return view('ageAndCountryCheck');
+// })->middleware("ageAndCountryCheck");
 
 // 2. Multiple routes
 // Route::middleware('ageAndCountryCheck')->group(function () {
@@ -102,3 +103,8 @@ Route::get("/ageAndCountryCheck", function () {
 //     Route::get('/add', 'add');
 //     Route::get('/delete/{id}', 'delete');
 // });
+
+// Assign middleware at single route
+Route::get('ageAndCountryCheck', function () {
+    return view('ageAndCountryCheck');
+})->middleware(AgeCheck::class);

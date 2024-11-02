@@ -13,8 +13,8 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        // Global middleware
-        $middleware->append(AgeCheck::class);
+        // Global middleware: it will apply on every route
+        // $middleware->append(AgeCheck::class);
 
         // Group middleware
         $middleware->appendToGroup('ageAndCountryCheck', [AgeCheck::class, CountryCheck::class]);
