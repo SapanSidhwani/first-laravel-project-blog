@@ -18,11 +18,16 @@ class UserController extends Controller
     function users()
     {
         // -> From database
+
+        // -> Raw SQL
         // $users = DB::select("select * from users");
 
+        // -> Query Builder
+        $users = DB::table('users')->where('name', 'like', 'sapan')->get();
+
         // -> From API
-        $res = Http::get('https://jsonplaceholder.typicode.com/users')->body(); // because response is in json format. ********->status();
-        $users = json_decode($res);
+        // $res = Http::get('https://jsonplaceholder.typicode.com/users')->body(); // because response is in json format. ********->status();
+        // $users = json_decode($res);
 
         return view('users', ['users' => $users]);
     }
