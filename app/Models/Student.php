@@ -16,6 +16,8 @@ class Student extends Model
         protected $table = "college_students"
     */
 
+    public $timestamps = false;
+
     public function testFunction () {
         return "testFunction";
     }

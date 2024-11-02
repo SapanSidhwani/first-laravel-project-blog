@@ -10,7 +10,16 @@ class StudentController extends Controller
 {
     public function getStudents()
     {
+        // -> just Eloquent model
         $students = Student::all();
+
+        // -> Eloquent model with query builder: You can use query builder with eloquent model because it built on top of the query builder
+        /*
+            $students = Student::get()->where('name', 'sapan40');
+
+            $res = Student::where('name', 'sapan40')->update(['name' => 'sapan53']);
+            return $res ? "Data updated successfully" : "Error while updating the result";
+        */
 
         // namespace alias:
         $stuObj = new Student;
