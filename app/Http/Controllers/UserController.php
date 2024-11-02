@@ -15,6 +15,12 @@ class UserController extends Controller
         return "My name is Sapan";
     }
 
+    function getForm(Request $req, $id)
+    {
+        // echo $id;
+        return $req;
+    }
+
     function users()
     {
         // -> From database

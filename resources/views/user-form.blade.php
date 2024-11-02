@@ -22,6 +22,13 @@
         @endif
     -->
     <form action="{{url('/add-user')}}" method="post">
+
+        <!--
+            > To make the put request 
+            
+            In form tag method should be equal to "post":
+            <input type="hidden" name="_method" value="PUT">
+        -->
         <!-- 
             If you don't write it that will show 419 page expired error 
             It generates token

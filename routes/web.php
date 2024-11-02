@@ -46,6 +46,8 @@ use App\Http\Middleware\AgeCheck;
 // Static
 Route::get('/user', [UserController::class, 'getUser']); // Now go to the `/user`. There is no need to make the view file.
 
+Route::get('/form/{id}', [UserController::class, 'getForm']); // http://localhost:8000/form/3?name=sapan&age=21
+
 //Dynamic
 Route::get('/username/{name}', [UserController::class, 'sayUserName']);
 
