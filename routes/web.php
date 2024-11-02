@@ -76,6 +76,8 @@ Alternative
 
 */
 
+Route::get("students", [StudentController::class, "getStudents"]);
+
 // 'student' is better than '/student' in url because '/student' can occur anywhere but in 'student' it should be at the start
 Route::prefix("student")->group(function () {
     Route::view('/home', 'home');
