@@ -38,6 +38,8 @@ class UserController extends Controller
         echo "Is that method or not: " . $req->isMethod('post'); // return true or false
         echo "<br>";
 
+        echo "All inputs: ". $req->input(); 
+
         // echo $id;
         // return $req;
     }
