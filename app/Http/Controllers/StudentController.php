@@ -53,4 +53,40 @@ class StudentController extends Controller
             return redirect('students')->with('error', 'Error while deleting the student');
         }
     }
+
+    public function studentDetails($id)
+    {
+        $studData = Student::find($id);
+        if ($studData) {
+            return view('student-details', ['studData' => $studData]);
+        }
+
+        // flash message
+        return redirect('students')->with('error', 'Student not found');
+    }
+
+    public function editStudent(Request $request, $id)
+    {
+        // Validate the request
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255|unique:students,email,' . $id,
+        ]);
+
+        // Find the student by ID
+        $student = Student::find($id);
+
+        if (!$student) {
+            return redirect()->back()->withErrors(['Student not found.']);
+        }
+
+        // Update the student's details
+        $student->name = $request->input('name');
+        $student->email = $request->input('email');
+        
+        if ($student->save())
+            return redirect('students')->with('success', 'Student updated successfully.');
+        else
+            return redirect()->back()->withErrors(['Error while updating the student.']);
+    }
 }

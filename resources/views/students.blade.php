@@ -28,7 +28,10 @@
                 <td>{{ $item->id }}</td>
                 <td>{{ $item->name }}</td>
                 <td>{{ $item->email }}</td>
-                <td><a href="/delete-student/{{ $item->id }}" type="button">Delete</a></td>
+                <td>
+                    <a href="/delete-student/{{ $item->id }}" type="button">Delete</a>
+                    <a href="/student-details/{{ $item->id }}" type="button">Edit</a>
+                </td>
             </tr>
             @endforeach
         </tbody>
