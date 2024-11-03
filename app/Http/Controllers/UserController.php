@@ -17,8 +17,29 @@ class UserController extends Controller
 
     function getForm(Request $req, $id)
     {
+        echo "Request method: " . $req->method();
+        echo "<br>";
+
+        echo "Request path: " . $req->path();
+        echo "<br>";
+
+        echo "Request url: " . $req->url();
+        echo "<br>";
+
+        echo "name: " . $req->name;
+        echo "<br>";
+
+        echo "age: " . $req->age;
+        echo "<br>";
+
+        echo "IP address: " . $req->ip();
+        echo "<br>";
+
+        echo "Is that method or not: " . $req->isMethod('post'); // return true or false
+        echo "<br>";
+
         // echo $id;
-        return $req;
+        // return $req;
     }
 
     function users()
