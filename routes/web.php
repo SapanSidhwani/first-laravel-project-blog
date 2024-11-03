@@ -6,12 +6,19 @@ use App\Http\Controllers\FileUpload;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
+use Illuminate\Support\Facades\App;
 
 Route::get('/home', function () {
     return view('home');
 });
 
+Route::view('contact-us', 'contact-us');
+
 Route::get('/', function () {
+    return redirect('/en');
+});
+Route::get('/{lang}', function ($lang) {
+    App::setLocale($lang);
     return view('welcome');
 });
 

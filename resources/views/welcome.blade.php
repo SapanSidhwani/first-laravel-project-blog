@@ -1,4 +1,7 @@
 <h1>
-    Welcome to Laravel
-    <small>Version 11.1.0</small>
+    {{ __('welcome.heading') }}
 </h1>
+<a href="{{url('/home')}}">{{ __('welcome.home') }}</a>
+<a href="{{url('/about')}}">{{ __('welcome.about') }}</a>
+<a href="{{url('/contact-us')}}">{{ __('welcome.contact') }}</a>
+
