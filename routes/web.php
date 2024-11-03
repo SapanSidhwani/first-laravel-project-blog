@@ -114,3 +114,21 @@ Route::get("/checkmiddleware", function () {
 Route::get('ageAndCountryCheck', function () {
     return view('ageAndCountryCheck');
 })->middleware(AgeCheck::class);
+
+
+/*
+
+Both are same:
+
+Route::get('user', [UserController::class, 'any']);
+Route::post('user', [UserController::class, 'any']);
+Route::put('user/{id}', [UserController::class, 'any']);
+Route::delete('user/{id}', [UserController::class, 'any']);;
+
+Any method:
+Route::any('user', [UserController::class, 'any']);
+
+Match method:
+Route::match(['get', 'post'], 'user', [UserController::class, 'any']);
+Route::match(['put', 'delete'], 'user', [UserController::class, 'any']);
+*/
