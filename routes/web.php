@@ -146,3 +146,4 @@ Route::post('store-file', [FileUpload::class, 'storeFile']);
 
 Route::view('register-student', 'register-student');
 Route::post('add-student', [StudentController::class, 'addStudent']);
+Route::get('delete-student/{id}', [StudentController::class, 'deleteStudent']);

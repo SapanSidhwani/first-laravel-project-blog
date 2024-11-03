@@ -39,7 +39,18 @@ class StudentController extends Controller
         if ($stud) {
             return "Data inserted successfully";
         } else {
-            return "Error while adding the user"; 
+            return "Error while adding the user";
+        }
+    }
+
+    public function deleteStudent($id)
+    {
+        $stud = Student::destroy($id);
+
+        if ($stud) {
+            return redirect('students')->with('success', 'Student deleted successfully');
+        } else {
+            return redirect('students')->with('error', 'Error while deleting the student');
         }
     }
 }
