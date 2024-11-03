@@ -17,10 +17,10 @@ Route::view('contact-us', 'contact-us');
 Route::get('/', function () {
     return redirect('/en');
 });
-Route::get('/{lang}', function ($lang) {
-    App::setLocale($lang);
-    return view('welcome');
-});
+// Route::get('/{lang}', function ($lang) {
+//     App::setLocale($lang);
+//     return view('welcome');
+// });
 
 // Dynamic routing
 Route::get('/sound/{name}', function ($name) {
@@ -143,3 +143,6 @@ Route::match(['put', 'delete'], 'user', [UserController::class, 'any']);
 
 Route::view('file-upload', 'file-upload'); // http://localhost:8000/file-upload
 Route::post('store-file', [FileUpload::class, 'storeFile']);
+
+Route::view('register-student', 'register-student');
+Route::post('add-student', [StudentController::class, 'addStudent']);

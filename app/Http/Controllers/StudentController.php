@@ -22,9 +22,24 @@ class StudentController extends Controller
         */
 
         // namespace alias:
-        $stuObj = new Student;
+        $stuObj = new Student();
         $testResult =  $stuObj->testFunction();
 
         return view('students', ['items' => $students, 'testResult' => $testResult]);
+    }
+
+    function addStudent(Request $req)
+    {
+        // eloquent model instance
+        $stud = new Student();
+
+        $stud->name = $req->name;
+        $stud->email = $req->email;
+        $stud->save();
+        if ($stud) {
+            return "Data inserted successfully";
+        } else {
+            return "Error while adding the user"; 
+        }
     }
 }
