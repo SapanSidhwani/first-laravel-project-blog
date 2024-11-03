@@ -2,6 +2,7 @@
 
 // ----------------------------- For Routing --------------------------
 
+use App\Http\Controllers\FileUpload;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
@@ -132,3 +133,6 @@ Match method:
 Route::match(['get', 'post'], 'user', [UserController::class, 'any']);
 Route::match(['put', 'delete'], 'user', [UserController::class, 'any']);
 */
+
+Route::view('file-upload', 'file-upload'); // http://localhost:8000/file-upload
+Route::post('store-file', [FileUpload::class, 'storeFile']);
