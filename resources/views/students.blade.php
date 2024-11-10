@@ -12,7 +12,11 @@
 
 <div>
     <h1>Hello, Sapan</h1>
-    <h2>{{ $testResult }}</h2>
+    <h2>{{ @$testResult }}</h2>
+    <form action="/search" method="get">
+        <input type="text" name="search" id="search" placeholder="Search by name" value="{{ @$search }}">
+        <button type="submit">Search</button>
+    </form>
     <table border="1">
         <thead>
             <tr>

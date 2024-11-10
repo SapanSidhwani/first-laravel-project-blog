@@ -83,10 +83,17 @@ class StudentController extends Controller
         // Update the student's details
         $student->name = $request->input('name');
         $student->email = $request->input('email');
-        
+
         if ($student->save())
             return redirect('students')->with('success', 'Student updated successfully.');
         else
             return redirect()->back()->withErrors(['Error while updating the student.']);
+    }
+
+    public function search(Request $req)
+    {
+        $result = Student::where('name', 'like', "%$req->search%")->get();
+        // echo($result);
+        return view('students', ['items' => $result, 'search' => $req->search]);
     }
 }
