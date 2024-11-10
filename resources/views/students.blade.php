@@ -10,6 +10,11 @@
 </script>
 @endif
 
+<style>
+    .w-5.h-5{
+        width: 20px;
+    }
+</style>
 <div>
     <h1>Hello, Sapan</h1>
     <h2>{{ @$testResult }}</h2>
@@ -40,4 +45,5 @@
             @endforeach
         </tbody>
     </table>
+    {{ $items->links() }}
 </div>

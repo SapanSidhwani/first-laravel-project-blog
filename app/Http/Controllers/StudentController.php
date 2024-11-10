@@ -11,7 +11,7 @@ class StudentController extends Controller
     public function getStudents()
     {
         // -> just Eloquent model
-        $students = Student::all();
+        $students = Student::paginate(1);
 
         // -> Eloquent model with query builder: You can use query builder with eloquent model because it built on top of the query builder
         /*
