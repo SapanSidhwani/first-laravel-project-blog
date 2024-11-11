@@ -151,3 +151,5 @@ Route::get('student-details/{id}', [StudentController::class, 'studentDetails'])
 Route::put('edit-student/{id}', [StudentController::class, 'editStudent']);
 
 Route::get('/search', [StudentController::class, 'search']);
+
+Route::post('/delete-multiple-students', [StudentController::class, 'deleteMultipleStudents']);

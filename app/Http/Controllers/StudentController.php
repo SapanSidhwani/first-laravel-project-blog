@@ -11,7 +11,7 @@ class StudentController extends Controller
     public function getStudents()
     {
         // -> just Eloquent model
-        $students = Student::paginate(1);
+        $students = Student::paginate(5);
 
         // -> Eloquent model with query builder: You can use query builder with eloquent model because it built on top of the query builder
         /*
@@ -88,6 +88,13 @@ class StudentController extends Controller
             return redirect('students')->with('success', 'Student updated successfully.');
         else
             return redirect()->back()->withErrors(['Error while updating the student.']);
+    }
+
+    function deleteMultipleStudents(Request $req)
+    {
+        $res = Student::destroy($req->ids);
+        // $res = Student::destroy([...$req->ids]);
+        return $res ? redirect('students') : "Student data not deleted";
     }
 
     public function search(Request $req)
