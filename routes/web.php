@@ -4,6 +4,7 @@
 
 use App\Http\Controllers\FileUpload;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ImageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\App;
@@ -153,3 +154,6 @@ Route::put('edit-student/{id}', [StudentController::class, 'editStudent']);
 Route::get('/search', [StudentController::class, 'search']);
 
 Route::post('/delete-multiple-students', [StudentController::class, 'deleteMultipleStudents']);
+Route::view('/upload', 'upload');
+Route::post('/upload', [ImageController::class, 'upload']);
+Route::get('view-files', [ImageController::class, 'list']);
