@@ -1,0 +1,38 @@
+there is a topic in larvel called named routes where we can assign a name to a route.
+
+
+command lines:
+
+php artisan server -> To start the server
+php artisan make:controller UserController -> To create a controller
+
+-- Model name always should be singular unlike the db table name(plural).
+php artisan make:model Student -> To create a model
+php artisan make:view -> To create a view
+php artisan lang:publish -> It shows the pre-defined language files. In that, there are pre-defined rules are available.
+php artisan make:rule uppercase -> To create a rule
+
+php artisan make:migration -> To create a migration
+php artisan make:seeder -> To create a seeder
+php artisan make:policy -> To create a policy
+
+php artisan make:middleware AgeCheck -> To create a middleware
+
+-----------------------------------------
+
+php artisan migrate -> To migrate the database changes in the new or current database
+
+In .env,
+
+> With migration  
+SESSION_DRIVER=database
+
+> without migration
+SESSION_DRIVER=file
+
+-----------------------------------------
+
+php artisan model:show Student -> To inspect the model(table of database)
+
+php artisan storage:link
+ INFO  The [C:\Users\sapan\Desktop\laravel-project\blog\public\storage] link has been connected to [C:\Users\sapan\Desktop\laravel-project\blog\storage\app/public].

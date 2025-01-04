@@ -1,0 +1,35 @@
+Eloquent Model or ORM to perform databse operations easily
+
+HTTP Client -> It is a library that allows you to send HTTP requests to a server and get the response.
+
+Eloquent is built on top of the query builder
+
+In Eloquent Model,
+protected $table = "college_students";
+public $timestamps = false;
+
+Patch method -> It is used to update the specific column or field of the row.
+
+------------- SESSION --------------
+If you already have a Request object and want to follow dependency injection practices, use $request->session()->put().
+If you want a more concise or globally accessible way to set session data, session(['key' => 'value']); is fine
+
+get: session()->get('key')
+put: session()->put('key', 'value')
+forget: session()->forget(['key1', 'key2']);
+flush: session()->flush(); // removes all session data
+has: session()->has('key')
+exists: session()->exists('key')
+
+https://chatgpt.com/c/672737b3-3c78-8006-a5e4-feaceb7255e9
+
+----------------- Flash Session ----------------
+session()->flash('success', 'Your message here');
+
+session()->reflash(); // it will persist the flash session
+
+session()->keep('success'); // it will keep only the flash session with the given key
+
+------------------------------------------------
+
+value="{{ @$search }}" ==> We put the @ before the varible to check it's undefined or not
