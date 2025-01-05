@@ -33,3 +33,8 @@ session()->keep('success'); // it will keep only the flash session with the give
 ------------------------------------------------
 
 value="{{ @$search }}" ==> We put the @ before the varible to check it's undefined or not
+
+To publish the stubs: php artisan stub:publish
+After executing this command we can see the stubs. You can customize the stubs as per your needs.
+
+Example if you want to generate a new controller, view, model, etc. and you want to customize it as per your requirements, then you can use the stubs.

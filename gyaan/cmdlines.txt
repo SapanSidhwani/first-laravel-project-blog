@@ -17,6 +17,7 @@ php artisan make:seeder -> To create a seeder
 php artisan make:policy -> To create a policy
 
 php artisan make:middleware AgeCheck -> To create a middleware
+php artisan stub:publish -> To publish the stubs
 
 -----------------------------------------
 
