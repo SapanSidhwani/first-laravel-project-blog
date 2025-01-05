@@ -159,3 +159,4 @@ Route::post('/upload', [ImageController::class, 'upload']);
 Route::get('view-files', [ImageController::class, 'list']);
 
 Route::view('lec-50-layout', 'lec-50-layout');
+Route::view('lec-53-layouts-using-template-inheritance', 'lec-53-layouts-using-template-inheritance');
